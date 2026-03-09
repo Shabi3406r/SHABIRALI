@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabir Ali M A | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-blue: hsl(22, 95%, 45%);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --card-bg: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; padding: 30px 8%; align-items: center; position: sticky; top: 0; background: rgba(13, 13, 13, 0.9); z-index: 1000; border-bottom: 1px solid #222; }
+        .logo-box { background: var(--accent-blue); color: #000; padding: 6px 14px; font-weight: 900; font-size: 0.95rem; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { color: var(--text-dim); text-decoration: none; font-size: 0.7rem; font-weight: 700; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent-blue); }
+
+        /* Hero / About Me */
+        header { display: flex; padding: 60px 8%; align-items: center; justify-content: space-between; min-height: 80vh; gap: 40px; }
+        .hero-text { flex: 1.2; }
+        .hello { color: var(--accent-blue); font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        h1 { font-size: clamp(3rem, 6vw, 4.5rem); line-height: 0.65; font-weight: 900; margin-bottom: 25px; }
+        .job-title { background: var(--accent-blue); color: #000; display: inline-block; padding: 12px 65px; font-weight: 800; font-size: 1.15rem; margin-bottom: 30px; text-transform: uppercase; }
+        .description { color: var(--text-dim); font-size: 1.95rem; max-width: 800px; }
+        
+
+        .hero-img-container { flex: 0.8; display: flex; justify-content: flex-end; }
+        .profile-img { width: 500px; height: 450px; object-fit: cover; border-radius: 4px; filter:  contrast(110%); box-shadow: 20px 20px 0px var(--accent-blue); }
+  /*About Me */
+  about-container {
+    margin-top: 50px;           /* Pushes the description away from the orange box */
+    border-top: 1px solid #333; /* Optional: adds a subtle line to separate sections */
+    padding-top: 20px;
+}
+
+.description { 
+    color: var(--text-dim); 
+    font-size: 1.15rem; /* Reduced for better readability */
+    
+    /* INCREASE THIS TO EXTEND TO THE RIGHT */
+    max-width: 1200px;  /* Changed from 800px to allow more horizontal space */
+    
+    line-height: 1.6;   /* Spacing between lines */
+    text-align: justify; /* Optional: makes the right edge look clean and straight */
+}
+
+        /* Sections */
+        section { padding: 60px 8%; }
+        h2 { font-size: 1.8rem; margin-bottom: 40px; color: var(--text-main); border-left: 4px solid var(--accent-blue); padding-left: 15px; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid #333; transition: 0.3s; height: 100%; }
+        .card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+        .card h3 { color: var(--accent-blue); margin-bottom: 15px; text-transform: uppercase; font-size: 1.1rem; }
+        
+        .key-factors { margin-top: 15px; padding-top: 15px; border-top: 1px solid #333; }
+        .key-factors li { list-style: none; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .key-factors li::before { content: "▹"; position: absolute; left: 0; color: var(--accent-blue); }
+
+        /* Skills Layout */
+        .skills-wrap { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-tag { border: 1px solid var(--accent-blue); color: var(--accent-blue); padding: 8px 20px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .skill-tag:hover { background: var(--accent-blue); color: #000; }
+
+        /* Project Section Styling */
+        .project-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid #333; max-width: 800px; margin: 0 auto; }
+        .project-img { width: 100%; height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid #333; }
+        .details-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* A professional blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.details-button:hover {
+    background-color: #5f1e00; /* Darkens slightly when hovered */
+    color: #f0f0f0;
+}
+
+        /* Footer */
+        #contact {
+    padding: 80px 20px;
+    background-color: #000; /* Deep black background */
+    text-align: center;
+    border-top: 1px solid #222; /* Very subtle top divider */
+}
+
+#contact h2 {
+    font-weight: 200; /* Very thin font */
+    color: #ffffff;
+    letter-spacing: 5px; /* Spaced out for a high-end feel */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-link {
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    padding: 12px 30px;
+    border: 1px solid #444; /* Thin grey border */
+    width: 400px; /* Fixed width for alignment */
+    transition: all 0.4s ease-in-out;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+/* The "Sleek" Hover Effect */
+.contact-link:hover {
+    background-color: #ffffff; /* Fills with white */
+    color: #000000;           /* Text turns black */
+    border-color: #ffffff;
+    letter-spacing: 4px;      /* Subtle expansion effect */
+}
+
+.footer-credits {
+    font-weight: 200;
+    color: #666;
+    font-size: 0.7rem;
+    margin-top: 60px;
+    letter-spacing: 3px;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-box">SHABIR ALI M A</div>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+    <div class="hero-text">
+        <p class="hello">Hello, I'm</p>
+        <h1>Shabir Ali M A</h1>
+        <br>
+
+        <div class="job-title">Technical Expert & AI Accountant</div>
+    </br>
+    </div>
+    <div class="hero-img-container">
+        <img src="/iimgg.jpeg" alt="Shabir Ali" class="profile-img">
+    </div>
+</header>
+
+<hr>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p class="description">
+        I am an ambitious guy who constantly seeks new opportunities to grow. 
+        I hold professional certifications in <strong>AI Accounting and Analytics (PCAIA)</strong>, 
+        expertly merging modern financial intelligence with a solid background on the 
+        <strong>Technical side</strong> of industrial instrumentation and NDT operations.
+    </p>
+</section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        
+
+            <div class="card">
+                <h3>Customer Relationship Executive </h3>
+                <p>Delivered high-quality client coordination and service management.</p>
+                <ul class="key-factors">
+                    <li><strong>Key Factor:</strong> Professional communication with a wide range of people.</li>
+                    <li>Building and maintaining interpersonal client relationships.</li>
+                    <li>Adaptability and crisis management in daily operations.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Technical & Software Skills</h2>
+        <div class="skills-wrap">
+            <span class="skill-tag">Tally Prime</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">MS Word</span>
+            <span class="skill-tag">MS Excel</span>
+            <span class="skill-tag">Advanced Excel</span>
+            <span class="skill-tag">Zoho Accounting</span>
+            <span class="skill-tag">NDT Level 2 (UT, MT, PT, RT)</span>
+            <span class="skill-tag">QA/QC</span>
+            <span class="skill-tag">PLC Programming</span>
+        </div>
+    </section>
+    <section id="gallery">
+    <h2 class="section-title" style="color: #FFFFFF;">End-to-End Data Visualization Suite: From Spreadsheet to BI Dashboard</h2>
+    <div class="card-grid">
+        <div class="project-card">
+            <div class="card-image">
+                <img src="/pbi.jpg" alt="POWER BI DASHBOARD">
+            </div>
+            <div class="card-content">
+                <span class="tag">Engineering</span>
+                <h3>POWER BI INTERACTIVE DASHBOARD</h3>
+                <p>A professional-grade Power BI dashboard designed to monitor and optimize supply chain and sales performance. By integrating interactive maps, seasonal trend charts, and category-level deep dives, I created a tool that identifies financial leakage and high-growth opportunities instantly. This project demonstrates my ability to bridge technical data engineering with executive-level strategic reporting.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="card-image">
+                <img src="/ex.jpg" alt="excel data dashboard">
+            </div>
+            <div class="card-content">
+                <span class="tag">MICROSOFT EXCEL</span>
+                <h3>Interactive Sales Performance Dashboard Using excel </h3>
+                <p>An end-to-end Excel analysis project focused on operational transparency. I utilized Pivot Table aggregation and dynamic charting to visualize the 'Superstore' dataset, highlighting the intersection between sales volume and net profitability. This dashboard serves as a professional template for efficient, high-impact business reporting.</p>
+                <span>Pivot Tables</span>
+                <span>Data Modeling</span>
+                <span>Slicer Automation</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .section-title {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        color: var(--accent-blue);
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent-blue);
+    }
+
+    .card-image {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: 0.3s;
+    }
+
+    .project-card:hover .card-image img {
+        opacity: 1;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .tag {
+        font-size: 0.65rem;
+        color: var(--accent-blue);
+        font-weight: 900;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .card-content h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .card-content p {
+        color: var(--text-dim);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .large-card {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .skills-list {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .skills-list span {
+        background: #222;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        color: var(--text-main);
+    }
+</style>
+    <section id="projects">
+        <h2>Technical Project</h2>
+        <div class="project-card">
+            <div class="project-img" style="border: 2px solid #222; padding: 10px; background-color: #333;">
+    <img src="/agn.jpg" alt="Description of the project image" style="max-width: 100%; height: auto; display: block;">
+</div>
+            <div style="padding: 30px;">
+                <h3>Reagent Mixture & Level Controlling</h3>
+                <p>A sophisticated industrial automation project using <strong>PLC</strong> to control chemical reagent mixture ratios and real-time liquid level monitoring. Designed to ensure industrial precision, flow control, and operational safety.</p>
+                <a href="/index3.html" class="details-button">Click here for more details</a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="summit">
+        <h2>Global Engagement</h2>
+        <div class="card">
+            <h3>IGS Global Summit</h3>
+            <p>Participated as a <strong>Delegate of Russia</strong>. Engaged in high-level discussions regarding global industrial standards, engineering innovation, and international collaboration.</p>
+<p>The IGS Global Summit serves as a premier international forum where delegates from across the globe converge to bridge the gap between industrial needs and innovative solutions. By fostering a high-level exchange of resources and ideas, the summit enables countries to build sustainable alliances. My participation focused on the intersection of Oil & Gas technical standards, Digital Marketing for global reach, and the optimization of Logistics and Human Resources through flexible, AI-driven frameworks.</p>
+<hr>         
+<div class="video-container">
+        <video width="1100" height="300" controls>
+            <source src="/video.mp4" type="video/mp4">
+        </video> 
+        </div>
+    </section>
+
+    <footer id="contact">
+    <h2>Contact Me</h2>
+    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        
+        <a href="mailto:shabiralimarottickal@gmail.com" class="contact-link">
+            📧 shabiralimarottickal@gmail.com
+        </a>
+        
+        <a href="tel:+917034567822" class="contact-link">
+            📞 +91 7034567822
+        </a>
+        
+        <a href="https://www.linkedin.com/in/shabir-ali-m-a-46b645227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-link">
+            🔗 LinkedIn: Shabir Ali M A
+        </a>
+
+        <a href="https://www.instagram.com/s_a_b_i_r3406?igsh=MTY4Z3Z0MzhydHd2eA==" target="_blank" class="contact-link">
+            📸 Instagram
+        </a>
+
+    </div>
+    
+    <p style="color: var(--text-dim); margin-top: 30px;">END | Shabir Ali M A</p>
+</footer>
+</body>
+</html>
